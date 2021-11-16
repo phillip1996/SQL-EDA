@@ -1,0 +1,24 @@
+-- retrieving all tables from source
+SELECT * FROM Autocars;
+
+SELECT symboling, fueltype FROM Autocars;
+
+SELECT symboling, fueltype, length, width,height FROM Autocars;
+
+-- estimating the cars volume based on it parameters
+SELECT symboling, fueltype, (length*width*height) as volume FROM Autocars;
+
+-- percentage volume
+SELECT symboling, fueltype, (length*width*height)/100 as PercentageVolume FROM Autocars;
+
+-- estimating the maximum car price
+SELECT MAX(price)FROM Autocars;
+
+-- least expensive car 
+SELECT symboling , enginetype, height, price FROM Autocars 
+WHERE price = (SELECT MIN(price) FROM Autocars)
+ORDER BY height;
+
+SELECT fuelsystem, peakrpm, stroke FROM Autocars
+WHERE peakrpm NOT IN (6000,5800);
+
