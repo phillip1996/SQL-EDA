@@ -1,1 +1,1 @@
-# SQL-EDA
+# SQL-Exploratory Data Analysis
